@@ -85,7 +85,7 @@ setup(
     install_requires=[
         "panflute==1.10.6",
         "pystache==0.5.4",
-        "pyyaml==5.3",
+        "pyyaml==5.2",
         "future==0.16.0",
     ],
     # List additional groups of dependencies here (e.g. development
