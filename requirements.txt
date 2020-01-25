@@ -1,4 +1,4 @@
 panflute==1.12.4
 pystache==0.5.4
-pyyaml==5.2
+pyyaml==5.3
 future==0.16.0
