@@ -95,10 +95,10 @@ setup(
     # requirements files see:
     # https://packaging.python.org/en/latest/requirements.html
     install_requires=[
-        'panflute',
-        'pystache',
-        'pyyaml',
-        'future'
+        'panflute==1.10.6',
+        'pystache==0.5.4',
+        'pyyaml==3.12',
+        'future==0.16.0'
     ],
 
     # List additional groups of dependencies here (e.g. development
