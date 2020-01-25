@@ -83,7 +83,7 @@ setup(
     # requirements files see:
     # https://packaging.python.org/en/latest/requirements.html
     install_requires=[
-        "panflute==1.10.6",
+        "panflute==1.12.4",
         "pystache==0.5.4",
         "pyyaml==5.2",
         "future==0.16.0",
