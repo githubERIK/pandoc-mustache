@@ -19,7 +19,7 @@ before_install:
   - sudo dpkg -i pandoc.deb
 
 install:
-  - pip install pytest==5.3.* -r requirements.txt
+  - pip install pytest==4.6.* -r requirements.txt
 
 script:
   - python -m pytest
