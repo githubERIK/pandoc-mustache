@@ -1,6 +1,7 @@
 # pandoc-mustache: Variable Substitution in Pandoc
 
-**This repo is forked from https://github.com/BayLibre/pandoc-mustache which is a fork of https://github.com/michaelstepner/pandoc-mustache.**
+> This repo is forked from <https://github.com/BayLibre/pandoc-mustache> which is
+a fork of <https://github.com/michaelstepner/pandoc-mustache.**>.
 
 The **pandoc-mustache** filter allows you to put variables into your pandoc document text, with their values stored in a separate file. When you run `pandoc` the variables are replaced with their values.
 
@@ -28,16 +29,6 @@ diff_le_richpoor_women: "10.1"
 Will be converted by `pandoc document.md --filter pandoc-mustache` to:
 
 > The richest American men live 14.6 years longer than the poorest men, while the richest American women live 10.1 years longer than the poorest women.
-
-## Installation
-
-Install by opening a terminal and running:
-
-```
-pip install -U pandoc-mustache
-```
-
-Python 2.7, 3.4+, pypy, and pypy3 are supported.
 
 ## Usage
 
@@ -92,24 +83,6 @@ Python 2.7, 3.4+, pypy, and pypy3 are supported.
 
 - If you're writing a document that reports computed numerical results, you can program your code (in R, Python, Stata, etc.) to write those numbers to a YAML file automatically each time they are generated. By referencing your numerical results using variables instead of hard-coding them into the text, the document can be updated instantly if the results change. And you can be certain that all the numbers in the output document reflect the latest results of your analysis.
 
-## Contributing
-
-[![Project Status: Inactive – The project has reached a stable, usable state but is no longer being actively developed; support/maintenance will be provided as time allows.](http://www.repostatus.org/badges/latest/inactive.svg)](http://www.repostatus.org/#inactive)
-
-This code is not being actively developed. It was created to fulfill my pandoc writing needs, and the current feature set is adequate for me.
-
-If you have a **bug report**, you can create an issue or file a pull request. I'll look into it, time permitting.
-
-If you have a **feature request**, it is unlikely that I will be able to implement it for you. You can create an issue to generate discussion. If you implement a feature, you can file pull request and I will review it eventually, as time permits. If you're interested in making major additions to the code, I'd be happy to welcome a new maintainer to the project.
-
 ## License
 
 All of the files in this repository are released to the public domain under a [CC0 license](https://creativecommons.org/publicdomain/zero/1.0/) to permit the widest possible reuse.
-
-## Acknowledgements
-
-This pandoc filter was created using Sergio Correia's [panflute](https://github.com/sergiocorreia/panflute) package. The [panflute](https://github.com/sergiocorreia/panflute) repository also served as an inspiration for the organization of this repository.
-
-### Related Filters
-
-Scott Koga-Browes' [pandoc-abbreviations](https://github.com/scokobro/pandoc-abbreviations) filter also performs variable replacement in pandoc documents, using a different syntax.
