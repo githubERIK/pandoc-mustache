@@ -24,11 +24,12 @@ jobs:
       - name: install
         run: |
           python -m pip install --upgrade pip wheel
-          pip install pytest==6.* black -e .
+          pip install pytest==6.* black flake8 -e .
 
       - name: lint
         run: |
           black *.py pandoc_mustache tests --check
+          flake8 pandoc_mustache tests *.py
 
       - name: test
         run: |

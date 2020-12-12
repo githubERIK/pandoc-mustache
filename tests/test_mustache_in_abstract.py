@@ -1,7 +1,7 @@
 """
 Test that a mustache variable in the abstract will be replaced.
 """
-import os, subprocess
+import subprocess
 
 
 def test_mustache_abstract(tmpdir):

@@ -2,7 +2,7 @@
 Test that if no mustache file is specified in pandoc YAML metadata, the doc is returned unaltered.
 If there are mustache variables in the document, no error gets thrown: they appear in the output.
 """
-import os, subprocess
+import subprocess
 
 
 def test_no_mustache_file(tmpdir):

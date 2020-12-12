@@ -2,7 +2,9 @@
 Test that error is thrown if the document contains a mustache {{variable}} that does not exist
 in the template.
 """
-import os, subprocess, sys, platform
+import platform
+import subprocess
+import sys
 
 
 def test_yaml_mapping(tmpdir):
@@ -34,7 +36,7 @@ mustache: {mustachefile}
 
     # Run pandoc, assert error
     try:
-        output = subprocess.check_output(
+        subprocess.check_output(
             ["pandoc", doc["path"].strpath, "--filter", "pandoc-mustache"],
             universal_newlines=True,
             stderr=subprocess.STDOUT,

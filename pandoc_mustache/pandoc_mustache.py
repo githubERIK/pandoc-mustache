@@ -1,8 +1,9 @@
 """
 Pandoc filter to apply mustache templates on regular text.
 """
-from panflute import *
-import pystache, yaml
+import pystache
+import yaml
+from panflute import Code, CodeBlock, Str, run_filter
 
 
 def prepare(doc):

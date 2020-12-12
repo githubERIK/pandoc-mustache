@@ -1,7 +1,7 @@
 """
 Test that mustache template can be in folder that contains spaces.
 """
-import os, subprocess
+import subprocess
 
 
 def test_yaml_header_styles(tmpdir):

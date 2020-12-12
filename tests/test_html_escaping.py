@@ -1,7 +1,7 @@
 """
 Test that escaping characters for HTML is disabled.
 """
-import os, subprocess
+import subprocess
 
 
 def test_escape_singlequote(tmpdir):

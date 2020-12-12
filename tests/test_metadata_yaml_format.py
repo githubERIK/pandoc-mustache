@@ -17,7 +17,7 @@ mustache:
 ---
 
 """
-import os, subprocess
+import subprocess
 
 
 def test_yaml_mapping(tmpdir):

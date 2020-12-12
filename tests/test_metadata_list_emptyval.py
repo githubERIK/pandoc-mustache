@@ -2,7 +2,8 @@
 Test that if a list with an empty value for a mustache file is specified in pandoc YAML metadata,
 an error is thrown.
 """
-import os, subprocess, sys
+import subprocess
+import sys
 
 
 def test_blank_mustache_list(tmpdir):
@@ -30,7 +31,7 @@ mustache:
 
     # Run pandoc, assert error
     try:
-        output = subprocess.check_output(
+        subprocess.check_output(
             ["pandoc", doc["path"].strpath, "--filter", "pandoc-mustache"],
             universal_newlines=True,
             stderr=subprocess.STDOUT,
@@ -76,7 +77,7 @@ mustache:
 
     # Run pandoc, assert error
     try:
-        output = subprocess.check_output(
+        subprocess.check_output(
             ["pandoc", doc["path"].strpath, "--filter", "pandoc-mustache"],
             universal_newlines=True,
             stderr=subprocess.STDOUT,

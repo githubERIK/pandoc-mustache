@@ -1,7 +1,7 @@
 """
 Test that a mustache variable in the code or codeblock will be replaced.
 """
-import os, subprocess
+import subprocess
 
 
 def test_mustache_code(tmpdir):
