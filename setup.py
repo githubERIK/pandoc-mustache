@@ -60,16 +60,22 @@ setup(
         # Specify the Python versions you support here. In particular, ensure
         # that you indicate whether you support Python 2, Python 3 or both.
         # https://pypi.python.org/pypi?%3Aaction=list_classifiers
-        "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
     ],
     # What does your project relate to?
     keywords="pandoc pandocfilters panflute markdown latex mustache",
     packages=find_packages(exclude=["contrib", "docs", "tests", "examples"]),
-    install_requires=["panflute==1.12.4", "pystache==0.5.4", "pyyaml==5.3",],
+    install_requires=[
+        "panflute==1.12.4",
+        "pystache==0.5.4",
+        "pyyaml==5.3",
+    ],
     entry_points={
-        "console_scripts": ["pandoc-mustache=pandoc_mustache.pandoc_mustache:main",],
+        "console_scripts": [
+            "pandoc-mustache=pandoc_mustache.pandoc_mustache:main",
+        ],
     },
-    python_requires="~=3.6",
+    python_requires="~=3.7",
 )
