@@ -18,8 +18,8 @@ def test_escape_singlequote(tmpdir):
     doc[
         "metadata"
     ] = """---
-        mustache: {mustachefile}
-        ---
+mustache: {mustachefile}
+---
 """
     doc["mfiles"] = {"mustachefile": template["path"]}
     doc["text"] = "Hello {{place}}"
@@ -55,9 +55,9 @@ def test_escape_gt(tmpdir):
     doc[
         "metadata"
     ] = """---
-        mustache: {mustachefile}
-        ---
-        """
+mustache: {mustachefile}
+---
+"""
     doc["mfiles"] = {"mustachefile": template["path"]}
     doc["text"] = "Hello {{place}}"
     template["content"] = "place: world > universe"
@@ -92,9 +92,9 @@ def test_escape_ampersand(tmpdir):
     doc[
         "metadata"
     ] = """---
-        mustache: {mustachefile}
-        ---
-        """
+mustache: {mustachefile}
+---
+"""
     doc["mfiles"] = {"mustachefile": template["path"]}
     doc["text"] = "Hello {{place}}"
     template["content"] = "place: world & universe"
