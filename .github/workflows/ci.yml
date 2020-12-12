@@ -24,7 +24,11 @@ jobs:
       - name: install
         run: |
           python -m pip install --upgrade pip wheel
-          pip install pytest==6.* -e .
+          pip install pytest==6.* black -e .
+
+      - name: lint
+        run: |
+          black *.py pandoc_mustache tests --check
 
       - name: test
         run: |

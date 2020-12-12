@@ -4,28 +4,33 @@ If there are mustache variables in the document, no error gets thrown: they appe
 """
 import os, subprocess
 
+
 def test_no_mustache_file(tmpdir):
 
     # Define empty dictionaries
     doc = {}
 
     # Prepare file names
-    doc['path'] = tmpdir.join("document.md")
+    doc["path"] = tmpdir.join("document.md")
 
     # Prepare file contents
-    doc['metadata'] = ''
-    doc['text'] = 'Hello {{place}}'
+    doc["metadata"] = ""
+    doc["text"] = "Hello {{place}}"
 
     # Write contents to files
-    with open(doc['path'].strpath, "a") as myfile:
-        myfile.write(doc['metadata'])
-        myfile.write(doc['text'])
+    with open(doc["path"].strpath, "a") as myfile:
+        myfile.write(doc["metadata"])
+        myfile.write(doc["text"])
 
     # Run pandoc
-    output = subprocess.check_output(["pandoc", doc['path'].strpath, "--filter", "pandoc-mustache"], universal_newlines=True)
+    output = subprocess.check_output(
+        ["pandoc", doc["path"].strpath, "--filter", "pandoc-mustache"],
+        universal_newlines=True,
+    )
 
     # Test output
     assert output == "<p>Hello {{place}}</p>\n"
+
 
 def test_blank_mustache_mapping(tmpdir):
 
@@ -33,22 +38,27 @@ def test_blank_mustache_mapping(tmpdir):
     doc = {}
 
     # Prepare file names
-    doc['path'] = tmpdir.join("document.md")
+    doc["path"] = tmpdir.join("document.md")
 
     # Prepare file contents
-    doc['metadata'] = '''---
+    doc[
+        "metadata"
+    ] = """---
 mustache:
 ---
-'''
-    doc['text'] = 'Hello {{place}}'
+"""
+    doc["text"] = "Hello {{place}}"
 
     # Write contents to files
-    with open(doc['path'].strpath, "a") as myfile:
-        myfile.write(doc['metadata'])
-        myfile.write(doc['text'])
+    with open(doc["path"].strpath, "a") as myfile:
+        myfile.write(doc["metadata"])
+        myfile.write(doc["text"])
 
     # Run pandoc
-    output = subprocess.check_output(["pandoc", doc['path'].strpath, "--filter", "pandoc-mustache"], universal_newlines=True)
+    output = subprocess.check_output(
+        ["pandoc", doc["path"].strpath, "--filter", "pandoc-mustache"],
+        universal_newlines=True,
+    )
 
     # Test output
     assert output == "<p>Hello {{place}}</p>\n"
