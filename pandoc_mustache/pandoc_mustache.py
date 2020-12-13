@@ -18,9 +18,7 @@ def prepare(doc):
             doc.mustache_files = None  # switch empty string back to None
         else:
             doc.mustache_files = [doc.mustache_files]  # put non-empty string in list
-    # with open('debug.txt', 'a') as the_file:
-    #     the_file.write(str(doc.mustache_files))
-    #     the_file.write('\n')
+
     if doc.mustache_files is not None:
         doc.mustache_hashes = [
             yaml.load(open(file, "r").read(), Loader=yaml.SafeLoader)
