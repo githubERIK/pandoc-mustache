@@ -1,8 +1,8 @@
 """
 Pandoc filter to apply mustache templates on regular text.
 """
-import pystache
 import yaml
+from jinja2 import StrictUndefined, Template
 from panflute import Code, CodeBlock, Str, run_filter
 
 
@@ -27,7 +27,6 @@ def prepare(doc):
         doc.mhash = {
             k: v for mdict in doc.mustache_hashes for k, v in mdict.items()
         }  # combine list of dicts into a single dict
-        doc.mrenderer = pystache.Renderer(escape=lambda u: u, missing_tags="strict")
     else:
         doc.mhash = None
 
@@ -35,7 +34,8 @@ def prepare(doc):
 def action(elem, doc):
     """Apply combined mustache template to all strings in document."""
     if type(elem) in (Str, CodeBlock, Code) and doc.mhash is not None:
-        elem.text = doc.mrenderer.render(elem.text, doc.mhash)
+        template = Template(source=elem.text, undefined=StrictUndefined)
+        elem.text = template.render(**doc.mhash)
         return elem
 
 
