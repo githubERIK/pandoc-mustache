@@ -20,11 +20,13 @@ except (IOError):
     with open(path.join(here, "README.md"), encoding="utf-8") as f:
         long_description = f.read()
 
-# Import version number
 version = {}
 with open("pandoc_mustache/version.py") as fp:
     exec(fp.read(), version)
 version = version["__version__"]
+
+with open("requirements/prod.txt") as prod_requirements_file:
+    PROD_REQUIREMENTS = prod_requirements_file.read().splitlines()
 
 setup(
     name="pandoc-mustache",
@@ -67,11 +69,7 @@ setup(
     # What does your project relate to?
     keywords="pandoc pandocfilters panflute markdown latex mustache",
     packages=find_packages(exclude=["contrib", "docs", "tests", "examples"]),
-    install_requires=[
-        "panflute==1.12.4",
-        "pystache==0.5.4",
-        "pyyaml==5.3",
-    ],
+    install_requires=PROD_REQUIREMENTS,
     entry_points={
         "console_scripts": [
             "pandoc-mustache=pandoc_mustache.pandoc_mustache:main",
